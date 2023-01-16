@@ -9,8 +9,8 @@ import persistStore from "redux-persist/es/persistStore";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
-		Raleway: require("./assets/fonts/Raleway-VariableFont_wght.ttf"),
-		"Raleway-SemiBold": require("./assets/fonts/Raleway-SemiBold.ttf"),
+		Raleway: require("./src/assets/fonts/Raleway-VariableFont_wght.ttf"),
+		"Raleway-SemiBold": require("./src/assets/fonts/Raleway-SemiBold.ttf"),
 	});
 	if (!fontsLoaded) return null;
 
