@@ -1,6 +1,6 @@
 import { StyleSheet, Animated, View, Dimensions } from "react-native";
 import React from "react";
-
+import { colors } from "../../themes/colors";
 const { width } = Dimensions.get("screen");
 
 const Pagination = ({ data, scrollX }: any) => {
@@ -11,19 +11,23 @@ const Pagination = ({ data, scrollX }: any) => {
 
 				const dotWidth = scrollX.interpolate({
 					inputRange,
-					outputRange: [12, 20, 12],
+					outputRange: [12, 14, 12],
 					extrapolate: "clamp",
 				});
-
+				console.log(dotWidth);
 				const dotHeight = scrollX.interpolate({
 					inputRange,
-					outputRange: [12, 20, 12],
+					outputRange: [12, 14, 12],
 					extrapolate: "clamp",
 				});
 
 				const backgroundColor = scrollX.interpolate({
 					inputRange,
-					outputRange: ["#C4C4C4", "#383838", "#C4C4C4"],
+					outputRange: [
+						colors["grey-200"],
+						colors["grey-900"],
+						colors["grey-200"],
+					],
 					extrapolate: "clamp",
 				});
 
@@ -57,9 +61,9 @@ const styles = StyleSheet.create({
 		height: 12,
 		borderRadius: 100,
 		marginHorizontal: 3,
-		backgroundColor: "#C4C4C4",
+		backgroundColor: colors["grey-200"],
 	},
 	dotActive: {
-		backgroundColor: "#383838",
+		backgroundColor: colors["grey-900"],
 	},
 });

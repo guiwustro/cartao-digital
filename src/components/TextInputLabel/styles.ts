@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-
+import { colors } from "../../themes/colors";
 export const styles = (hasError: boolean) =>
 	StyleSheet.create({
 		container: {
@@ -8,7 +8,7 @@ export const styles = (hasError: boolean) =>
 		},
 		input: {
 			fontFamily: "Roboto",
-			borderColor: hasError ? "red" : "#E3E1E1",
+			borderColor: hasError ? colors["red-500"] : colors["grey-0"],
 			borderWidth: 1,
 			borderRadius: 6,
 			fontWeight: "400",
@@ -21,10 +21,10 @@ export const styles = (hasError: boolean) =>
 			fontFamily: "Raleway-SemiBold",
 			fontSize: 8,
 			marginBottom: 5,
-			color: hasError ? "red" : "#000000",
+			color: hasError ? colors["red-200"] : colors.black,
 		},
 		messageError: {
-			color: "red",
+			color: colors["red-500"],
 			fontFamily: "Raleway-SemiBold",
 			fontSize: 8,
 		},

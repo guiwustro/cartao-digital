@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-
+import { colors } from "../../themes/colors";
 const { width } = Dimensions.get("screen");
 export const styles = StyleSheet.create({
 	containerWithBackground: {
@@ -21,12 +21,12 @@ export const styles = StyleSheet.create({
 	},
 	boldText: {
 		fontSize: 20,
-		color: "#FFFFFF",
+		color: colors.white,
 		fontWeight: "700",
 	},
 	smallText: {
 		fontSize: 16,
-		color: "#FFFFFF",
+		color: colors.white,
 		fontWeight: "500",
 	},
 	tinyFlag: {

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../themes/colors";
 
 export const styles = StyleSheet.create({
 	centeredView: {
@@ -9,10 +10,10 @@ export const styles = StyleSheet.create({
 	},
 	modalView: {
 		margin: 20,
-		backgroundColor: "white",
+		backgroundColor: colors.white,
 		borderRadius: 20,
 		padding: 35,
-		shadowColor: "#000",
+		shadowColor: colors.black,
 		shadowOffset: {
 			width: 0,
 			height: 2,
@@ -27,13 +28,13 @@ export const styles = StyleSheet.create({
 		elevation: 2,
 	},
 	buttonConfirm: {
-		backgroundColor: "#DE6B54",
+		backgroundColor: colors["red-200"],
 	},
 	buttonCancel: {
-		backgroundColor: "#BFBFBF",
+		backgroundColor: colors["grey-100"],
 	},
 	textStyle: {
-		color: "white",
+		color: colors.white,
 		fontWeight: "bold",
 		textAlign: "center",
 	},

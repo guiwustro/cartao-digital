@@ -8,22 +8,23 @@ import CustomButton from "../Buttons";
 import CustomModal from "../CustomModal";
 import { styles } from "./styles";
 import { useState } from "react";
+import { colors } from "../../themes/colors";
 
 const HideButtonInfo = {
 	name: "eye-outline",
-	color: "#2D2940",
+	color: colors["dark-blue"],
 	size: 23,
 };
 
 const ShowButtonInfo = {
 	name: "eye-off-outline",
-	color: "#2D2940",
+	color: colors["dark-blue"],
 	size: 23,
 };
 
 const TrashButtonInfo = {
 	name: "trash-outline",
-	color: "#F21D1D",
+	color: colors["red-500"],
 	size: 20,
 };
 

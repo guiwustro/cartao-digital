@@ -33,11 +33,11 @@ export const Card = ({
 
 	let cardNumberDisplayed = cardNumber;
 	if (isHiddenNumber) {
-		cardNumberDisplayed = `**** **** **** ****`;
+		cardNumberDisplayed = `●●●● ●●●● ●●●● ●●●●`;
 	}
 
 	const gradualDisplayedCard = (actualNumberCard: string) => {
-		const HIDDEN_CARD_NUMBERS = `**** **** **** ****`;
+		const HIDDEN_CARD_NUMBERS = `●●●● ●●●● ●●●● ●●●●`;
 		const PARTIAL_CARD_NUMBERS = HIDDEN_CARD_NUMBERS.slice(
 			actualNumberCard.length,
 			HIDDEN_CARD_NUMBERS.length

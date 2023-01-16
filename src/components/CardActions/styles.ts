@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../themes/colors";
 
 export const styles = StyleSheet.create({
 	header: {
@@ -9,7 +10,7 @@ export const styles = StyleSheet.create({
 		width: "90%",
 	},
 	title: {
-		color: "#525252",
+		color: colors["grey-700"],
 		alignSelf: "flex-start",
 		fontFamily: "Raleway",
 		fontWeight: "700",
