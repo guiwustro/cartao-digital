@@ -1,30 +1,24 @@
 import { View, KeyboardAvoidingView, ScrollView } from "react-native";
-import AddCardForm, { ICardForm } from "../../components/AddCardForm";
+import AddCardForm from "../../components/AddCardForm";
 import { Card } from "../../components/Card";
 import { styles } from "./styles";
 import { useState } from "react";
-import { useHeaderHeight } from "@react-navigation/elements";
+import "react-native-get-random-values";
+import { ICard } from "../../types/Card";
 
 const AddCard = () => {
-	const [newCard, setNewCard] = useState<ICardForm>({
+	const [newCard, setNewCard] = useState<ICard>({
 		card_name: "Nome do cartão",
 		card_number: "",
 		person_name: "Nome completo",
-		flag: "",
 	});
-	const height = useHeaderHeight();
 	return (
-		<KeyboardAvoidingView
-			behavior="padding"
-			// keyboardVerticalOffset={1}
-			style={styles.container}
-		>
+		<KeyboardAvoidingView behavior="padding" style={styles.container}>
 			<ScrollView
 				style={{
 					width: "100%",
 					flex: 1,
 				}}
-				contentInset={{ bottom: height }}
 				contentContainerStyle={{ alignItems: "center" }}
 			>
 				<View
@@ -40,6 +34,7 @@ const AddCard = () => {
 						flag={newCard.flag}
 						cardNumber={newCard.card_number}
 						personName={newCard.person_name}
+						alreadyCreated={false}
 					/>
 				</View>
 				<AddCardForm setNewCard={setNewCard} newCard={newCard} />
