@@ -1,12 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
+const { width } = Dimensions.get("screen");
 export const styles = StyleSheet.create({
 	containerWithBackground: {
-		height: 205,
-		borderRadius: 15,
-		overflow: "hidden",
-		width: "100%",
-		maxWidth: 328,
+		width,
+		alignItems: "center",
 	},
 	container: {
 		flex: 1,
@@ -30,6 +28,10 @@ export const styles = StyleSheet.create({
 		fontSize: 16,
 		color: "#FFFFFF",
 		fontWeight: "500",
+	},
+	tinyFlag: {
+		height: 40,
+		maxWidth: 100,
 	},
 	footer: {
 		justifyContent: "center",
