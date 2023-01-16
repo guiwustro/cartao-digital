@@ -6,4 +6,12 @@ export const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 		alignItems: "center",
 	},
+	containerContent: {
+		marginHorizontal: 20,
+	},
+	textEmptyContainer: {
+		fontWeight: "500",
+		color: "black",
+		textAlign: "center",
+	},
 });

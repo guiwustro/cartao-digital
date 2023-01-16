@@ -24,10 +24,6 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 		alignItems: "center",
 		justifyContent: "center",
-		// font-style: normal;
-		// font-weight: 700;
-		// font-size: 15px;
-		// line-height: 18px;
 	},
 	SvgButton: {
 		height: 65,
