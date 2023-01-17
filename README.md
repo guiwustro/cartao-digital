@@ -51,6 +51,7 @@ exp://exp.host/@guiwustro/cartao-digital?release-channel=default
 <!-- COLOCAR UM GIF UTILIZANDO A APLICAÇÃO! -->
 <img src="./screenshots/project-gif.gif" width="300"/>
 </div>
+
 ## Features
 
 - [x] Adicionar e remover cartões ;
