@@ -1,0 +1,11 @@
+{
+	"expo": {
+		"name": "Cartão digital",
+		"slug": "cartao-digital",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"ios": {
+			"supportsTablet": true
+		}
+	}
+}
