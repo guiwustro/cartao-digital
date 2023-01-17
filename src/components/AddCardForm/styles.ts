@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		height: "100%",
 	},
-	fieldTextContainer: {},
 	buttonContainer: {
 		marginTop: 35,
 	},

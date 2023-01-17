@@ -29,6 +29,9 @@ const TrashButtonInfo = {
 };
 
 const CardActions = () => {
+	const { is_hidden_number, actual_id, cardList } = useAppSelector(
+		(state) => state.card
+	);
 	const dispatch = useAppDispatch();
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -36,9 +39,6 @@ const CardActions = () => {
 		setIsModalOpen(false);
 	};
 
-	const { is_hidden_number, actual_id, cardList } = useAppSelector(
-		(state) => state.card
-	);
 	const actualCardName = cardList.find(({ id }) => id === actual_id)?.card_name;
 
 	const deleteCard = () => {

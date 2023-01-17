@@ -59,7 +59,7 @@ const AddCardForm = ({ setNewCard, newCard }: IAddCardForm) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.fieldTextContainer}>
+			<View>
 				<Controller
 					control={control}
 					name="card_name"
@@ -146,6 +146,7 @@ const AddCardForm = ({ setNewCard, newCard }: IAddCardForm) => {
 				<CustomButton
 					textTitle="ADICIONAR"
 					type="Add"
+					underlayColor="#77C5E7"
 					onPress={handleSubmit(handleRegisterCard)}
 				/>
 			</View>
