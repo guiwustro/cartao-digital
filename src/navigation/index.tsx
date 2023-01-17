@@ -1,14 +1,34 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+	CardStyleInterpolators,
+	createStackNavigator,
+} from "@react-navigation/stack";
+import { TransitionSpec } from "@react-navigation/stack/lib/typescript/src/types";
+import { Easing, View } from "react-native";
 import CustomButton from "../components/Buttons";
-
 import AddCard from "../pages/AddCard";
 import ListCard from "../pages/ListCard";
 
 const Navigation = () => {
-	const Stack = createNativeStackNavigator();
+	const Stack = createStackNavigator();
 
+	const config = {
+		animation: "timing",
+		config: {
+			duration: 200,
+			easing: Easing.linear,
+		},
+	};
 	return (
-		<Stack.Navigator>
+		<Stack.Navigator
+			screenOptions={{
+				gestureEnabled: true,
+				transitionSpec: {
+					open: config as TransitionSpec,
+					close: config as TransitionSpec,
+				},
+				cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+			}}
+		>
 			<Stack.Screen
 				name="Cartões"
 				options={({ navigation }) => ({
@@ -18,15 +38,18 @@ const Navigation = () => {
 						fontFamily: "Raleway",
 					},
 					headerShadowVisible: false,
-					contentStyle: {
-						marginTop: 37,
-					},
 					headerRight: () => (
-						<CustomButton
-							type="Plus"
-							textTitle="+"
-							onPress={() => navigation.navigate("Adicionar cartão")}
-						/>
+						<View
+							style={{
+								paddingRight: 24,
+							}}
+						>
+							<CustomButton
+								type="Plus"
+								textTitle="+"
+								onPress={() => navigation.navigate("Adicionar cartão")}
+							/>
+						</View>
 					),
 				})}
 				component={ListCard}
@@ -41,9 +64,6 @@ const Navigation = () => {
 						fontFamily: "Raleway",
 					},
 					headerShadowVisible: false,
-					contentStyle: {
-						marginTop: 20,
-					},
 				}}
 			/>
 		</Stack.Navigator>
