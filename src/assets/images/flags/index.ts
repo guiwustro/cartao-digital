@@ -1,8 +1,8 @@
-import Amex from "./amex-flag.png";
-import DinersClub from "./diners-club-flag.png";
-import Mastercard from "./mastercard-flag.png";
-import Visa from "./visa-flag.png";
-import Elo from "./elo-flag.png";
-import Hipercard from "./hipercard-flag.png";
+import Amex from "./amex.svg";
+import DinersClub from "./dinersclub.svg";
+import Visa from "./visa.svg";
+import Hipercard from "./hipercard.svg";
+import Mastercard from "./mastercard.svg";
+import Elo from "./elo.svg";
 
-export default { Amex, DinersClub, Hipercard, Elo, Mastercard, Visa };
+export { Amex, DinersClub, Hipercard, Elo, Visa, Mastercard };
