@@ -36,5 +36,4 @@ export const styles = StyleSheet.create({
 	footer: {
 		justifyContent: "center",
 	},
-	cardName: {},
 });

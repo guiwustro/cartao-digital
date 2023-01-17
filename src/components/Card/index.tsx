@@ -68,13 +68,8 @@ export const Card = ({
 				<View style={styles.container}>
 					<View style={styles.header}>
 						<TextCustomFont style={styles.boldText} description={cardName} />
-						{flag && (
-							<Image
-								style={styles.tinyFlag}
-								source={cardFlagInfo[flag].imageURL}
-							/>
-							// <TextCustomFont style={styles.boldText} description={flag} />
-						)}
+
+						{flag && cardFlagInfo[flag].icon}
 					</View>
 					<View style={styles.footer}>
 						<TextCustomFont style={styles.smallText} description={personName} />
