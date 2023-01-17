@@ -1,8 +1,13 @@
-import { Pressable, PressableProps, Text, View } from "react-native";
+import {
+	Text,
+	View,
+	TouchableHighlight,
+	TouchableHighlightProps,
+} from "react-native";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 
-interface IPropsCustomButton extends PressableProps {
+interface IPropsCustomButton extends TouchableHighlightProps {
 	type: "Plus" | "Add" | "Svg";
 	svgIcon?: {
 		name: string;
@@ -19,7 +24,11 @@ const CustomButton = ({
 	...rest
 }: IPropsCustomButton) => {
 	return (
-		<Pressable style={styles[`${type}Button`]} {...rest}>
+		<TouchableHighlight
+			underlayColor="#DDDDDD"
+			style={styles[`${type}Button`]}
+			{...rest}
+		>
 			{svgIcon ? (
 				<View style={styles.container}>
 					<Icon name={svgIcon.name} color={svgIcon.color} size={svgIcon.size} />
@@ -30,7 +39,7 @@ const CustomButton = ({
 			) : (
 				<Text style={styles[`${type}Text`]}>{textTitle}</Text>
 			)}
-		</Pressable>
+		</TouchableHighlight>
 	);
 };
 

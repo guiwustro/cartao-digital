@@ -1,9 +1,17 @@
 import React from "react";
-import { Modal, Text, Pressable, View, PressableProps } from "react-native";
+import {
+	Modal,
+	Text,
+	Pressable,
+	View,
+	PressableProps,
+	TouchableHighlight,
+	TouchableHighlightProps,
+} from "react-native";
 import TextCustomFont from "../TextCustomFont";
 import { styles } from "./styles";
 
-interface IPropsCustomModal extends PressableProps {
+interface IPropsCustomModal extends TouchableHighlightProps {
 	title: string;
 	description: string;
 	isOpenModal: boolean;
@@ -38,7 +46,8 @@ const CustomModal = ({
 							description={description}
 						/>
 						<View style={styles.buttonContainer}>
-							<Pressable
+							<TouchableHighlight
+								underlayColor="#DDDDDD"
 								style={[styles.button, styles.buttonCancel]}
 								onPress={() => onClickCloseButton()}
 							>
@@ -46,13 +55,14 @@ const CustomModal = ({
 									style={styles.textStyle}
 									description="Cancelar"
 								/>
-							</Pressable>
-							<Pressable
+							</TouchableHighlight>
+							<TouchableHighlight
+								underlayColor="#D75940"
 								style={[styles.button, styles.buttonConfirm]}
 								{...rest}
 							>
 								<Text style={styles.textStyle}>Confirmar</Text>
-							</Pressable>
+							</TouchableHighlight>
 						</View>
 					</View>
 				</View>
