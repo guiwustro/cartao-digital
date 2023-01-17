@@ -1,6 +1,6 @@
 import { View, FlatList, Animated, ViewToken } from "react-native";
 import { Card } from "../Card";
-import React, { useRef } from "react";
+import React, { RefObject, useEffect, useRef } from "react";
 import Pagination from "./Pagination";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { changeActualId } from "../../redux/slicers/cardSlice";
@@ -9,10 +9,17 @@ const Carousel = () => {
 	const scrollX = useRef(new Animated.Value(0)).current;
 	const card = useAppSelector((state) => state.card);
 	const dispatch = useAppDispatch();
+	const flatListRef = useRef<FlatList>(null);
 
-	const setActualCard = (id: string) => {
-		dispatch(changeActualId(id));
+	const scrollFlatListToEnd = () => {
+		if (flatListRef.current) {
+			flatListRef.current.scrollToEnd({ animated: true });
+		}
 	};
+
+	useEffect(() => {
+		scrollFlatListToEnd();
+	}, [card.cardList]);
 
 	const handleOnScroll = (event: any) => {
 		Animated.event(
@@ -34,10 +41,12 @@ const Carousel = () => {
 	const handleOnViewableItemsChanged = useRef(
 		(info: { viewableItems: ViewToken[]; changed: ViewToken[] }) => {
 			if (info?.viewableItems[0]?.isViewable) {
-				setActualCard(info.viewableItems[0].item.id);
+				const actualId = info.viewableItems[0].item.id;
+				dispatch(changeActualId(actualId));
 			}
 		}
 	).current;
+
 	const viewabilityConfig = useRef({
 		itemVisiblePercentThreshold: 20,
 	}).current;
@@ -64,8 +73,11 @@ const Carousel = () => {
 				horizontal
 				pagingEnabled
 				snapToAlignment="start"
+				keyExtractor={(item: any) => item.id}
 				showsHorizontalScrollIndicator={false}
 				onScroll={handleOnScroll}
+				automaticallyAdjustsScrollIndicatorInsets
+				ref={flatListRef}
 				onViewableItemsChanged={handleOnViewableItemsChanged}
 				viewabilityConfig={viewabilityConfig}
 			/>
