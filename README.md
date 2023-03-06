@@ -1,4 +1,4 @@
-# Desafio Cartão Digital
+# Cartão Digital
 
 ## Sobre o projeto
 
